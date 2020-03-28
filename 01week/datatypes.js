@@ -10,14 +10,38 @@ const theString = theNumber.toString();
 console.log("string is", theNumber.toString());
 console.log("the number is", theNumber);
 
-//.4
-const trueNumber = 50;
-const falseNumber = 40;
-const theSum = falseNumber + trueNumber;
+//.4 creating a boolean
+let trueNumber = 50;
+ let falseNumber = 40;
 
-  
-  console.log ( theSum );
-  console.log (typeof trueNumber <= falseNumber);
+   console.log (typeof trueNumber <= falseNumber);
+// //.5 writing a program the add two things together. For some reason it works in repl.it but not here??
+// let a = Number(prompt("Enter first number"));
+// let b = Number(prompt("Enter second number"));
+// alert(a + b);
+ 
+//.6
+let firstNumber = 42;
+let secondNumber = 31;
+ console.log(typeof firstNumber);
+ console.log(typeof secondNumber);
+ 
+ let addBoth = (x, y) => {
+   if (x < y && y > 0) {
+     return (x - y)
+   }
+ else {
+      return 'this will be negative'
+ }}
+ addBoth(firstNumber, secondNumber)
+
+
+
+
+
+
+//.5
+
 
 //.5
 
