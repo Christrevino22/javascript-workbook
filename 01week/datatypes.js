@@ -20,20 +20,23 @@ let trueNumber = 50;
 // let b = Number(prompt("Enter second number"));
 // alert(a + b);
  
-//.6
-let firstNumber = 42;
-let secondNumber = 31;
- console.log(typeof firstNumber);
- console.log(typeof secondNumber);
+//.6 write a program than runs when two things are
+let x = 42;
+let y = 31;
+ console.log(typeof x);
+ console.log(typeof y);
  
  let addBoth = (x, y) => {
    if (x < y && y > 0) {
      return (x - y)
    }
  else {
-      return 'this will be negative'
+      return 'this will be True'
  }}
- addBoth(firstNumber, secondNumber)
+ addBoth(x, y);
+
+//.7 
+
 
 
 
