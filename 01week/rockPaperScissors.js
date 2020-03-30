@@ -12,11 +12,15 @@ const rl = readline.createInterface({
 });
 
 // the function that will be called by the unit test below
+//the function should return 1 of 3 strings
+// - 'Its a tie'
+// - 'Hand one wins!'
+// - 'Hand two wins!'
 const rockPaperScissors = (hand1, hand2) => {
 
   // Write code here
   // Use the unit test to see what is expected
-
+  return "It's a tie!";
 }
 
 // the first function called in the program to get an input from the user
