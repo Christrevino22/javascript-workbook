@@ -12,7 +12,7 @@ const rl = readline.createInterface({
 });
 
 // the function that will be called by the unit test below
-//the function should return 1 of 3 strings
+//the function should return 1 of 3 string
 // - 'Its a tie'
 // - 'Hand one wins!'
 // - 'Hand two wins!'
