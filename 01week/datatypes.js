@@ -84,7 +84,7 @@ const bothFalse = (input5, input6) => {
     b = null;
   }
 
-  console.log(a);
+  console.log(a); 
   console.log(b);
 
   console.log(typeof a);
