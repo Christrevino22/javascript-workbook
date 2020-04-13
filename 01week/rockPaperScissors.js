@@ -12,12 +12,54 @@ const rl = readline.createInterface({
 });
 
 // the function that will be called by the unit test below
+//the function should return 1 of 3 string
+// - 'Its a tie'
+// - 'Hand one wins!'
+// - 'Hand two wins!'
 const rockPaperScissors = (hand1, hand2) => {
 
   // Write code here
   // Use the unit test to see what is expected
+  // Hand 1 & 2 
+  hand1 = hand1.trim().toLowerCase();
+  hand2 = hand2.trim().toLowerCase();
+
+
+  if (hand1 == hand2 && hand1 !== '' && hand2 !=='') {
+    console.log("It's a tie!");
+    return "It's a tie!";
+  }
+  else if (hand1 == "rock" && hand2 =="scissors") {
+    console.log("Hand one wins!")
+    return "Hand one wins!";
+  }
+  else if (hand1 == "rock" && hand2 =="paper") {
+    console.log("Hand two wins!")
+    return "Hand two wins!";
+  }
+  else if (hand1 == "scissors" && hand2 == "rock") {
+    console.log("Hand two wins!")
+    return "Hand two wins!";
+  }
+  else if (hand1 == "scissors" && hand2 == "paper") {
+    console.log("Hand one wins!")
+    return "Hand one wins!";
+  }
+  else if (hand1 == "paper" && hand2 == "rock") {
+    console.log("Hand one wins!")
+    return "Hand one wins!";
+  }
+  else if (hand1 == "paper" && hand2 == "scissors") {
+    console.log("Hand two wins!")
+    return "Hand two wins!";
+  }
+  else {
+    console.log("Invalid input.")
+    return "Invalid input."
+  }
 
 }
+
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
@@ -48,7 +90,7 @@ if (typeof describe === 'function') {
       assert.equal(rockPaperScissors('paper', 'scissors'), "Hand two wins!");
       assert.equal(rockPaperScissors('rock', 'scissors'), "Hand one wins!");
     });
-    it('should scrub input to ensure lowercase with "trim"ed whitepace', () => {
+    it('should scrub input to ensure lowercase with "trim"ed whitespace', () => {
       assert.equal(rockPaperScissors('rOcK', ' paper '), "Hand two wins!");
       assert.equal(rockPaperScissors('Paper', 'SCISSORS'), "Hand two wins!");
       assert.equal(rockPaperScissors('rock ', 'sCiSsOrs'), "Hand one wins!");
