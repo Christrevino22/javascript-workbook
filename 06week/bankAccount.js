@@ -11,13 +11,13 @@ class Account {
   }
   //this method needs to return the sum of all the transactions
   balance() {
-    let sum = 0
     
-    for (let i = 0; i < this.transaction.length - 1; i++) {
-      sum += this.transaction[i]
-    } if(this.transaction)
-
-    console.log(balance(sum))
+    let balanceOf = this.transactions.reduce(function(a, b){
+      return a + b;
+  };
+  
+  console.log(sum); // Hopefully this will print out the sum
+    
   }
 
   deposit(amountDeposited) {
