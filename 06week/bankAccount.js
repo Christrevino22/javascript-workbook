@@ -4,17 +4,18 @@
 //create a Account Class
 class Account {
   //create a contractor with with account #, owner, Transactions
-  constructor(accountNum, accOwner, transaction) {
+  constructor(accountNum, accOwner, transactions) {
     this.accountNum = accountNum;
     this.accOwner = accOwner;
-    this.transaction = [];
+    this.transactions = [];
   }
   //this method needs to return the sum of all the transactions
   balance() {
-
-    const add = () => this.transaction.reduce((a, b) => a + b, 0);
+    let sum = 0
     
-    let sum = add(this.transaction);
+    for (let i = 0; i < this.transaction.length - 1; i++) {
+      sum += this.transaction[i]
+    } if(this.transaction)
 
     console.log(balance(sum))
   }
@@ -33,14 +34,15 @@ class Transaction {
     this.date = new Date();
     this.amount = amount;
     this.payee = payee;
+
   }
 
 }
 
 
 //created Account Owner
-let chrisAccount = new Account('454550', 'Christopher Trevino')
+let accountOne = new Account('454550', 'Christopher Trevino')
 //console.log(chrisAccount) 
-let target = new Transaction(50.50, 'Target')
+let transactionOne = new Transaction(50.50, 'Target')
 console.log(target);
 
