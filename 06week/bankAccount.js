@@ -11,10 +11,9 @@ class Account {
   }
   //this method needs to return the sum of all the transactions
   balance() {
-    
     let balanceOf = this.transactions.reduce(function(a, b){
       return a + b;
-  };
+  });
   
   console.log(sum); // Hopefully this will print out the sum
     
