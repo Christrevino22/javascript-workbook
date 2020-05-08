@@ -18,16 +18,19 @@ class Account {
   console.log(sum); // Hopefully this will print out the sum
     
   }
-
+ 
   deposit(amountDeposited) {
-    if (amountDeposited ) {
-
-    }
+    let payee = this.accOwner
+    //if we are just pushing in the account.
+  this.transactions.push(new Transaction(amountDeposited, payee))
   }
-  charge(payee, amountCharged){
-    if ()
+  charge(transaction){
+    if (this.balance() <= 0 || this.balance() < this.amount || this.balance() === 'this is a new account, a deposit has not yet been made') {
+      return 'insufficient funds'
+    } else {
+    return this.transactions.push(transaction)
   }
-}
+}}
 class Transaction {
   constructor(amount ,payee) {
     this.date = new Date();
@@ -42,6 +45,19 @@ class Transaction {
 //created Account Owner
 let accountOne = new Account('454550', 'Christopher Trevino')
 //console.log(chrisAccount) 
-let transactionOne = new Transaction(50.50, 'Target')
-console.log(target);
+let accountTwo = new Account('454540', 'Hitzel Betts')
+let gus = new Transaction(-54.56, 'gus chicken')
+let target = new Transaction(-204.59, 'target')
 
+
+/ console.log(gus)
+accountOne.deposit(1200)
+//accountOne .balance()
+//console.log(AccountOne)
+accountOne.charge(gus)
+accountOne.charge(target)
+// console.log(accountOne)
+console.log(accountOne.balance())
+
+console.log(accountTwo.balance())
+// console.log()
