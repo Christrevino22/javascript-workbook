@@ -47,7 +47,7 @@ function oneOfTwo() {
   if (x === 5 || y === 10) {
     return true;
   } else {
-    return "If this logs i came out as false"
+    return "If this logs both came out as false"
   }
   
 }
