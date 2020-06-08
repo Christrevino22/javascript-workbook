@@ -11,13 +11,45 @@ const rl = readline.createInterface({
   output: process.stdout
 });
 
+
 // the function that will be called by the unit test below
 const rockPaperScissors = (hand1, hand2) => {
+  // create hands than correct is it has lowercase or whitespace
+  // need to get white space away as well as lowercase the word
+  let scrubHand1 = hand1.toLowerCase().trim();
 
-  // Write code here
-  // Use the unit test to see what is expected
+let scrubHand2 = hand2.toLowerCase().trim();
 
+//need to compare hand1 to hand2 and if its the same its a tie
+//I tried to replicate the whiteboading video but for some reason i wasn't able to achieve 
+if (scrubHand1 === scrubHand2){
+  return "It's a tie!"
+    }
+if (scrubHand1 === "rock" && scrubHand2 === "paper"){
+  return 'Hand two wins!'
 }
+
+if (scrubHand1 === "rock" && scrubHand2 === "scissors"){
+  return 'Hand one wins!'
+}
+
+if (scrubHand1 === "paper" && scrubHand2 === "rock"){
+  return "Hand one wins!"
+}
+if (scrubHand1 === "paper" && scrubHand2 === "scissors"){
+  return 'Hand two wins!'
+}
+if (scrubHand1 === "scissors" && scrubHand2 === "rock"){
+  return "Hand two wins!"
+}
+if (scrubHand1 === "scissors" && scrubHand2 === "paper"){
+  return "Hand one wins!"
+}
+}
+
+ 
+
+
 
 // the first function called in the program to get an input from the user
 // to run the function use the command: node main.js
