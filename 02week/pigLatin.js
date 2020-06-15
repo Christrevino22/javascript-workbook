@@ -10,6 +10,7 @@ const rl = readline.createInterface({
 //this function will take in a word and returns the position of the first vowel
 //if the word has no vowel, it return -1 
 function firstVowel(word){
+  let wordNew = word.toLowerCase().trim();
   let vowels = "aeiou";
   //loops thru whatever word is chosen to get translated
   for(let i = 0; i < word.length; i++){
@@ -18,7 +19,7 @@ function firstVowel(word){
     //needed to create the answer. this tells us wether it has a vowel or not 
     let answer = vowels.includes(letter);
     //console.log(letter, " ", answer);
-    console.log(i , " ", answer);
+    //console.log(i , " ", answer);
     //if our answer is = to true it would return our i.
     if(answer === true){
       return i;
@@ -33,10 +34,27 @@ function firstVowel(word){
 const pigLatin = (word)  => {
 
   // Your code here
+ 
+  //set a empty string
+  //set the first vowel into a variable
      let position = firstVowel(word);
-     console.log("position of the first vowel is", position) 
-           
-}
+     //console.log("position of the first vowel is", position)
+    //felt like it should have worked
+     if (firstVowel == true){
+       word += "yay";
+       return word;
+     } else if (firstVowel === -1){
+      let firstHalf = word.substring(0, position);
+       word = word.substring(firstVowel, word.length);
+       word = word + firstHalf;
+       word += "ay";
+       return word;
+
+     }
+
+     
+}           
+
 
 
 const getPrompt = () => {

@@ -1,0 +1,7 @@
+1. find the first vowel
+// if the first is a vowel, then you add "yay" to the end.
+// example: egg -> eggyay
+// if the first vowel is in the middle of the word,
+// then you split the word, and swap the halves, and add "ay" to the end.
+fox -> f   ox   -> oxf -> oxfay
+//if the word doesnt have a vowel, you can make something up
