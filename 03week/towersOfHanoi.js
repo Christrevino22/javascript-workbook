@@ -18,18 +18,25 @@ function printStacks() {
   console.log("b: " + stacks.b);
   console.log("c: " + stacks.c);
 }
+/*
+This function takes in start Stack and end Stack,and moves the top piece
+*from the corresponding starting stack to the corresponding edning stack
+* @param {*}
 
-function movePiece() {
+*/
+
+function movePiece(startStack, endStack) {
+  // Your code here
+  stacks.b.push('X')
+
+}
+
+function isLegal(startStack, endStack) {
   // Your code here
 
 }
 
-function isLegal() {
-  // Your code here
-
-}
-
-function checkForWin() {
+function checkForWin() {         
   // Your code here
 
 }
