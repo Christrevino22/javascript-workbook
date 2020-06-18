@@ -2,6 +2,7 @@
 
 const assert = require('assert');
 const readline = require('readline');
+const { truncate } = require('fs');
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout
@@ -13,7 +14,7 @@ let board = [
 ];
 
 let playerTurn = 'X';
-let Otherplayer = 'O';
+
 
 function printBoard() {
   console.log('   0  1  2');
@@ -28,8 +29,34 @@ function printBoard() {
 *Otherwise return false
 */
 function horizontalWin() {
-  if(board[0][1] === playerTurn)
-}
+  if(board[0][0] === "X" && board[0][1] === "X" && board[0][2] === "X"){
+    return true
+  } else if (board[0][0] === "O" && board[0][1] === "O" && board[0][2] === "O"){
+    return true
+  } else if (board[1][0] === "X" && board[1][1] === "X" && board[1][2] === "X"){
+    return true
+  } else if(board[1][0] === "O" && board[1][1] === "O" && board[1][2] === "O"){
+    return true
+  } else if(board[2][0] === "X" && board[2][1] === "X" && board[2][2] === "X"){
+    return true
+  } else if(board[2][0] === "O" && board[2][1] === "O" && board[2][2] === "O"){
+    return true
+  } else{
+    return false
+  }
+    
+  }
+
+  
+
+ 
+
+
+
+
+
+  
+  
 /*
 *if a player won vertically on any row, return true
 *Otherwise return false
@@ -37,6 +64,21 @@ function horizontalWin() {
 */
 function verticalWin() {
   // Your code here
+  if(board[0][0] === "X" && board[1][0] === "X" && board[2][0] === "X"){
+    return true
+  } else if (board[0][0] === "O" && board[1][0] === "O" && board[2][0] === "O"){
+    return true
+  } else if (board[0][1] === "X" && board[1][1] === "X" && board[2][1] === "X"){
+    return true
+  } else if(board[0][1] === "O" && board[1][1] === "O" && board[2][1] === "O"){
+    return true
+  } else if(board[0][2] === "X" && board[1][2] === "X" && board[2][2] === "X"){
+    return true
+  } else if(board[0][2] === "O" && board[1][2] === "O" && board[2][2] === "O"){
+    return true
+  } else{
+    return false
+  }
 }
 /*
 *if a player won diagonally on any row, return true
@@ -45,10 +87,27 @@ function verticalWin() {
 
 function diagonalWin() {
   // Your code here
+  if(board[0][0] === "X" && board[1][1] === "X" && board[2][2] === "X"){
+    return true
+  } else if (board[0][0] === "O" && board[1][1] === "O" && board[2][2] === "O"){
+    return true
+  } else if(board[0][2] === "X" && board[1][1] === "X" && board[0][2] === "X"){
+    return true
+  } else if (board[0][2] === "O" && board[1][1] === "O" && board[0][2] === "O"){
+    return true
+  } else {
+    return false
+  }
+  
 }
 // if they won H V D return true else return false
 function checkForWin() {
   // code should call each check for types of wins
+  if(horizontalWin() == true || verticalWin() == true || diagonalWin == true ){
+    return true
+  } else {
+    return false
+  }
 }
 
 function ticTacToe(row, column) {
@@ -57,6 +116,10 @@ function ticTacToe(row, column) {
 
   //update the board
   board[row][column] = playerTurn;
+  if(playerTurn == "x") {
+    playerTurn = "O"
+  } 
+    checkForWin()
   //
   //check if they won? if they did print nice message, (optional)
   //maybe clear board(optional)
