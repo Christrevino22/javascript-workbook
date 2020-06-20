@@ -21,6 +21,7 @@ function generateSolution() {
   for (let i = 0; i < 4; i++) {
     const randomIndex = getRandomInt(0, letters.length);
     solution += letters[randomIndex];
+    
   }
 }
 
@@ -28,12 +29,16 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
 
-function generateHint() {
+function generateHint(guess) {
   // your code here
+  let solutionArray = [];
+  let guessArray = [];
+
+
 }
 
 function mastermind(guess) {
-  solution = 'abcd'; // Comment this out to generate a random solution
+  //solution = 'abcd'; // Comment this out to generate a random solution
   // your code here
 }
 
