@@ -31,15 +31,51 @@ function getRandomInt(min, max) {
 
 function generateHint(guess) {
   // your code here
-  let solutionArray = [];
-  let guessArray = [];
+  let solutionArray = solution.split("");
+  let guessArray = guess.split("");
+  let correctLetterLocation = 0;
+  let correctLetters = 0;
+
+  for(let i = 0; i < 4; i++){
+    if(solutionArray === guessArray){
+      correctLetterLocation++;
+      solutionArray = null;
+    }
+  }
+  console.log(solutionArray);
+  console.log(guessArray);
+
+  for(let i = 0; i < 4; i++){
+   let targetIndex = solutionArray.indexOf(guessArray[i]);
+   if(targetIndex < -1) {
+     correctLetters++;
+     solutionArray[targetIndex] = null;
+     console.log(solutionArray);
+   }   
+  }
+
+   return correctLetterLocation + "-"+ correctLetters;
 
 
+}
+
+function checkForWin(guess, solution){
+  if(guess === solution){
+    return true;
+  } else{
+    return;
+  }
 }
 
 function mastermind(guess) {
   //solution = 'abcd'; // Comment this out to generate a random solution
   // your code here
+  let hint = generateHint(guess)
+  board.push(`Guess: ${guess} - Hint: ${hint}`);
+  if(checkForWin(guess, solution) == true){
+    return "You Guessed it!";
+  }
+
 }
 
 
