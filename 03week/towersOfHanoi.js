@@ -30,8 +30,11 @@ This function takes in start Stack and end Stack,and moves the top piece
 */
   
 function movePiece(startStack, endStack) {
-  // Your code here
-  stacks.b.push('X')
+  // Need to first select a piece by removing it from the end of the stack... sTACKS[startStack] and removing from the end. utilizing pop()
+  let startingPiece =  stacks[startStack].pop();
+  // then need to push the piece into its its new stack. at end of stack.
+  stacks[endStack].push(startingPiece);
+
 
 }
 
@@ -40,13 +43,32 @@ function movePiece(startStack, endStack) {
  * and returns true only if the move is legal and valid
  * otherwise it return false
  * @param {*} startStack 
- * @param {*} endStack 
+ * @param {*} endStack
  */
 
 function isLegal(startStack, endStack) {
-  // Your code here
-  
+  // need to make sure program knows which inputs are usable
+  const onlyInputs = ["a", "b", "c"];
 
+  if(onlyInputs.includes(startStack) == false || onlyInputs.includes(endStack) == false){
+    return false;
+  } 
+
+  //if the move is into an empty stack move is legal
+  if(stacks[endStack].length == 0){
+  
+    return true;
+    // if the the moving piece is moving to a larger piece the move is legal 
+  
+  } else if(stacks[startStack].slice(-1) < stacks[endStack].slice(-1)){
+    
+    return true;
+  
+  } else {
+    
+    return false;
+  }
+  
 }
 /**
  * This function returns true, if the board is in a "winning state"
@@ -54,8 +76,13 @@ function isLegal(startStack, endStack) {
  * 
  */
 function checkForWin() {         
-  // Your code here
-
+  // if both B or C are full or there array length is 4 they have won else they lost
+  if (stacks.b.length == 4 || stacks.c.length == 4){
+    console.log("You've Won!!!")
+    return true;
+  } else {
+    return false;
+  } 
 }
 
 
@@ -67,7 +94,12 @@ function checkForWin() {
   * 
   */
 function towersOfHanoi(startStack, endStack) {
-  // Your code here
+  if(isLegal(startStack,endStack) == true){
+    movePiece(startStack, endStack);
+  } else {
+    console.log("illegal move or entry");
+  }
+  checkForWin();
 
 }
 
