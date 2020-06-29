@@ -45,7 +45,10 @@ let mav = new Ship('Mars Ascent Vehicle', 'MAV', 'Ascend into low orbit');
 let hermes = new Ship('Hermes', 'Main Ship', 'Interplanetary Space Travel');
  let crewMember1 = new CrewMember('Rick Martinez', 'pilot', 'chemistry');
  let crewMember2 = new CrewMember('Commander Lewis', 'commander', 'geology');
-// Your code here
+crewMember1.enterShip(mav);
+crewMember2.enterShip(hermes);
+console.log(mav);
+console.log(hermes);
 
 //tests
 if (typeof describe === 'function'){
