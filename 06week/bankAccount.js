@@ -37,10 +37,14 @@ balance(){
     let sum = 0;
 
     //how can you use higher order function here.
+    // for i is less than the transactions length 
     for(let i = 0; i < this.transactions.length; i++){
+      //create a current transaction to represent the position in transactions
       let currentTransaction = this.transactions[i];
+      //sum is equal to sum plus the current transaction amount
       sum = sum + currentTransaction.amount;
     }
+    //then we will return the sum at the end to show the sum at the end.
     return sum;
   }
   charge(payee, amt){
@@ -50,8 +54,13 @@ balance(){
      * HINT: you can call the Balance() to get the balance before the charge
      */
 
-     let newCharge = new Transaction(-amt, payee);
-     this.transactions.push(newCharge);
+     // if the amount is less than balance allow else do nothing
+     if(amt < this.balance()){
+       //craeting a mock transaction
+      let newCharge = new Transaction(-amt, payee);
+      //pushing the newCharge into the transaction   
+      this.transactions.push(newCharge)
+     }
   }
 
 }
@@ -71,5 +80,23 @@ let acct1 = new BankAccount("5553429", "John Doe");
 console.log(acct1.accountNum);
 console.log(acct1.accOwner);
 console.log(acct1.balance());
+
+acct1.deposit(100);
+console.log(acct1.balance());
+
+acct1.deposit(-200);// shouldn't be allowed!! 
+console.log(acct1.balance());
+
+acct1.charge('Target', 30.50);
+acct1.charge('Freebirds', 15.15);
+console.log(acct1.balance());// 54.35
+
+acct1.charge('Diamond Shop', 1000);// charge shouldn't be allowed
+console.log(acct1.balance());//54.35
+
+acct1.charge('Target', -20);//refund
+console.log(acct1.balance());
+
+
 
 
